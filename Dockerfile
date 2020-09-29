@@ -31,7 +31,7 @@ COPY --from=build /tmp/portage-root/ /
 COPY --from=build /var/lib/postgresql/9.6/data /var/lib/postgresql/9.6/data
 COPY --from=build /etc/postgresql-9.6 /etc/postgresql-9.6
 COPY entrypoint.sh /opt/binbase-test-data/entrypoint.sh
-COPY --from=unzip-apk /opt/binbase-tet-data/data/unzip /opt/binbase-test-data/data
+COPY --from=unzip-apk /opt/binbase-test-data/data/unzip /opt/binbase-test-data/data
 
 RUN echo postgres:x:70: >> /etc/group \
     && echo postgres:x:70:70::/var/lib/postgresql:/bin/sh >> /etc/passwd \
